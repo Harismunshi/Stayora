@@ -6,15 +6,17 @@ import { motion, useInView } from 'framer-motion';
 const textVariant = {
   hidden: { opacity: 0, y: 50 },
   visible: {
-    opacity: 1,
+    opacity: 2,
     y: 0,
-    transition: { duration: 0.6, ease: 'easeOut' },
+    transition: { duration: 0.6, ease: "easeOut" },
   },
 };
 
 const ExclusiveOffers = () => {
   const sectionRef = useRef();
   const isInView = useInView(sectionRef, { once: true });
+  const titleRef = useRef();
+  const isTitleInView = useInView(titleRef, { once: false, margin: "-20% 0px" });
 
   return (
     <div
@@ -22,9 +24,10 @@ const ExclusiveOffers = () => {
       className="flex flex-col items-center px-6 md:px-16 lg:px-24 xl:px-32 pt-20 pb-30"
     >
       <motion.div
-        initial="hidden"
-        animate={isInView ? 'visible' : 'hidden'}
-        variants={textVariant}
+    ref={titleRef}
+  initial="hidden"
+  animate={isTitleInView ? "visible" : "hidden"}
+  variants={textVariant}
         className="flex flex-col md:flex-row items-center justify-between w-full gap-6"
       >
         <Title
