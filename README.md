@@ -38,10 +38,3 @@ This project is a full-stack hotel booking website built using the MERN stack (M
 - MongoDB (local or Atlas cloud)
 - npm or yarn
 
-### Installation
-
-1. **Clone the repository:**
-
-   ```bash
-   git clone https://github.com/yourusername/hotel-booking-mern.git
-   cd hotel-booking-mern
